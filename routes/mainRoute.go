@@ -37,5 +37,35 @@ func SetupRouter(db *gorm.DB, r *gin.Engine) {
 	r.PATCH("/books/:id", controllers.UpdateBook)
 	r.DELETE("/books/:id", controllers.DeleteBook)
 
+	// MataKuliah routes
+	r.POST("/mata_kuliah", controllers.CreateMataKuliah)
+	r.GET("/mata_kuliah", controllers.GetMataKuliah)
+	r.PATCH("/mata_kuliah/:id", controllers.UpdateMataKuliah)
+	r.DELETE("/mata_kuliah/:id", controllers.DeleteMataKuliah)
+
+	// Dosen routes
+	r.POST("/dosen", controllers.CreateDosen)
+	r.GET("/dosen", controllers.GetDosen)
+	r.PATCH("/dosen/:id", controllers.UpdateDosen)
+	r.DELETE("/dosen/:id", controllers.DeleteDosen)
+
+	// Mahasiswa routes
+	r.POST("/mahasiswa", controllers.CreateMahasiswa)
+	r.GET("/mahasiswa", controllers.GetMahasiswa)
+	r.PATCH("/mahasiswa/:id", controllers.UpdateMahasiswa)
+	r.DELETE("/mahasiswa/:id", controllers.DeleteMahasiswa)
+
+	// Nilai routes
+	r.POST("/nilai", controllers.CreateNilai)
+	r.GET("/nilai", controllers.GetNilai)
+	r.PATCH("/nilai/:id", controllers.UpdateNilai)
+	r.DELETE("/nilai/:id", controllers.DeleteNilai)
+
+	// JadwalKuliah routes
+	r.POST("/jadwal_kuliah", controllers.CreateJadwalKuliah)
+	r.GET("/jadwal_kuliah", controllers.GetJadwalKuliah)
+	r.PATCH("/jadwal_kuliah/:id", controllers.UpdateJadwalKuliah)
+	r.DELETE("/jadwal_kuliah/:id", controllers.DeleteJadwalKuliah)
+
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 }
